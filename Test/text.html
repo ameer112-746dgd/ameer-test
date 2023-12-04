@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+    .img{
+        cursor: pointer;
+    }
+        </style>
+    </head>
+    <body>
+        <img class="img" src="image/img1.jpeg" alt="gaming" height="300" width="300" onmouseover="chg_img()" onmouseout="rev_img()">
+<button onclick="chg_height()">Change Image Dimension</button>
+    </body>
+    <script>
+
+        function chg_img(){
+        var img = document.querySelector("img")
+        img.src = "image/img2.jpeg"
+       }
+
+       function chg_height(){
+       var img = document.querySelector("img");
+       var targetHeight = img.height + 5;
+       var targetWidth = img.width + 5;
+
+       var interval = setInterval(function() {
+    if (img.height < targetHeight && img.width < targetWidth) {
+      img.height += 5;
+      img.width += 5;
+    } else {
+      clearInterval(interval);
+    }
+  }, 5); // Change the dimensions every 5 seconds
+}
+   
+       
+
+    function rev_img()
+    {
+        var img = document.querySelector("img")
+        img.src = "image/img1.jpeg"
+    }
+
+    /*function chg_height()
+    {
+        var img = document.querySelector("img")
+        img.height = 400
+        img.width = 400
+        img.alt= "Changed alt"
+    }*/
+   </script>
+</html>

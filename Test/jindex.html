@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Phone Number Validation</title>
+</head>
+<body>
+  <script>
+    function validatePhoneNumber(input) {
+      // Remove any whitespace from the input
+      console.log(input.length)
+      input = input.trim();
+       console.log(input.length)
+
+       var names = ["ade","shade","wale","brian"]
+       ////length = 4
+       //console.log(names.length)  //.length
+       //console.log(names[0],names[1], names[2], names[3])
+      names[3] = "Tunde"
+      names[4] = "Akin"
+      // console.log(names.length)
+       var namelen = names.length
+       for(var j =0; j < namelen; j++)
+       {
+        // i=0,1, 
+        //01234
+        //names[5]
+        console.log(names[j])
+       }
+
+
+      /*
+      // Check if the input is empty
+      if (input === "") {
+        return false;
+      }
+
+      // Check if the input contains only digits
+      if (!/^\d+$/.test(input)) {
+        return false;
+      }
+
+      // Check if the input has a valid length for a phone number
+      if (input.length !== 10) {
+        return false;
+      }
+
+      // All checks passed, the input is a valid phone number
+      return true;
+      */
+    }
+
+    // Example usage:
+
+    let phoneNumber = "1234567890               ";
+    validatePhoneNumber(phoneNumber)
+
+    /*
+    if (validatePhoneNumber(phoneNumber)) {
+      console.log("Valid phone number!");
+    } else {
+      console.log("Invalid phone number!");
+    }AbortController*/
+
+    // st = 1, stop=20 2 ,... < 20
+    for(var i=2; i<20; i=i+2)
+    {
+      console.log(i)
+    }
+
+    var st = 10; // start = 10, stop = 0
+    for(st; st > 0; st--)
+    {
+      console.log(st)
+    }
+    for(var st=3; st<30; st=st+3)
+    {
+      console.log(st)
+    }
+  </script>
+</body>
+</html>

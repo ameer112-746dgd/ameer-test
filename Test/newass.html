@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="calculator">
+    <div class="display">0</div>
+    <div class="buttons">
+      <div class="row">
+        <button class="number">7</button>
+        <button class="number">8</button>
+        <button class="number">9</button>
+        <button class="operator">+</button>
+      </div>
+      <div class="row">
+        <button class="number">4</button>
+        <button class="number">5</button>
+        <button class="number">6</button>
+        <button class="operator">-</button>
+      </div>
+      <div class="row">
+        <button class="number">1</button>
+        <button class="number">2</button>
+        <button class="number">3</button>
+        <button class="operator">*</button>
+      </div>
+      <div class="row">
+        <button class="number">0</button>
+        <button class="operator">/</button>
+        <button class="clear">C</button>
+        <button class="equal">=</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+```
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  let display = document.querySelector(".display");
+  let buttons = document.querySelectorAll("button");
+
+  buttons.forEach(function(button) {
+    button.addEventListener("click", function() {
+      if (button.classList.contains("number")) {
+        display.textContent += button.textContent;
+      } else if (button.classList.contains("operator")) {
+        display.textContent += " " + button.textContent + " ";
+      } else if (button.classList.contains("clear")) {
+        display.textContent = "";
+      } else if (button.classList.contains("equal")) {
+        try {
+          display.textContent = eval(display.textContent);
+        } catch (error) {
+          display.textContent = "Error";
+        }
+      }
+    });
+  });
+});
+</script>
+```
+
+
+<style>
+.calculator {
+  background-color: #141313;
+  border: 1px solid #a70b0b;
+  padding: 10px;
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 10px;
+  color: white;
+}
+</style>

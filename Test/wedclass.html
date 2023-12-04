@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Query Selector for DOM</title>
+    </head>
+<body>
+    <style>
+       #myParagraph{
+          background-color:white;
+          text-align: center;
+          font-size: 55px;
+          margin-top: auto;
+        }
+
+        .pv {
+            visibility: visible;
+        }
+        .ph {
+            visibility: hidden;
+        }
+    </style>
+    
+<p id="myParagraph">Ameer Restaurant.</p>
+<nav>
+  <ul class="Nav" class="nav justify-content-center flex-column">
+    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+    <li class="nav-item"><a href="about us.html" class="nav-link">About Us</a></li>
+    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+    <li class="nav-item"><a href="reservation.html" class="nav-link">reservation</a></li>
+  </ul>
+</nav> 
+<div class=" text-center text-light">
+  <h2 class="text-center text-light ">About Us</h2>
+  <p> Ameer Restaurant is the place to be if you're a food lover! Our chefs work their magic to create dishes that will make your taste buds dance with joy.</p>
+  <p>We take pride in using the freshest ingredients sourced from local farmers, ensuring that each dish is bursting with flavor and goodness.</p>
+  <p>At Ameer Restaurant, we believe in creating an inviting and cozy atmosphere where you can relax and enjoy your meal. Our friendly staff are dedicated to making your dining experience unforgettable.</p>
+  <p>Whether you're craving a juicy steak, a comforting bowl of pasta, or a flavorful vegetarian dish, our menu has something to satisfy every palate.</p>
+  <p>Come join us at Ameer Restaurant and embark on a culinary journey that will delight your senses. We can't wait to serve you!</p>
+</div>
+
+<button onclick="changeColor()">Change Color</button>
+
+<div>
+    <input name="fname" type="text" id="fn" placeholder="First name" />
+    <br>
+    male <input type="checkbox" value="1" name="sx" class="sxb" /> 
+    female <input type="checkbox" value="1" name="sx" class="sxb" />
+    <br>
+    <button onclick="validatefrm()"> Validate </button>
+    
+</div>
+
+<script>
+    function validatefrm()
+    {
+        var txtf = document.querySelector("#fn")
+        var tv = txtf.value
+        if(tv ==="" || tv.length  < 3)
+        {
+        alert("first must be entered")
+        }
+
+        var chb = document.querySelectorAll(".sxb")
+        if(chb[0].checked && chb[1].checked) 
+        {
+            alert("Select a single gender")
+        }
+        // ! mean not
+        if(!chb[0].checked && !chb[1].checked)
+        {
+            alert("Must select a gender")
+        }
+    }
+var isDefaultColor = true;
+
+function changeColor() {
+  var paragraph = document.getElementById("myParagraph");
+
+  if (isDefaultColor) {
+    paragraph.style.backgroundColor = "blue";
+    isDefaultColor = false;
+  } else {
+    paragraph.style.backgroundColor = "white";
+    isDefaultColor = true;
+  }
+}
+</script>
+
+<body>
+
+    <p id="simple" class="pv">Simply paragrah welcome message, you can hide this message using the button below</p>
+    <button id="toggleB" onclick="toggleP()">Toggle Paragraph </button>
+    <ul>
+      <li class="food_list">Amala </li>
+      <li class="food_list">Basmati rice</li>
+      <li class="food_list">Fried rice</li>
+    </ul>
+    
+    <button onclick="countItems()">Count Items</button>
+    
+    <script>
+    function countItems() {
+      var dropdown = document.getElementById("myDropdown");
+      var count = dropdown.length;
+      alert("The dropdown contains " + count + " items.");
+    }
+
+    /*
+    var fl = document.querySelectorAll(".food_list") /// class, id, tagname
+    alert(fl.length)
+    //alert(fl.textContent)
+
+    var fl_cl = document.getElementsByClassName("food_list")
+    alert(fl_cl[0].textContent)
+    */
+    var ptag = document.querySelector("p")
+    alert(ptag.textContent)
+    function toggleP() {
+        var p = document.querySelector("#simple")
+
+      //  var  cl = p.classList  //.toggle()
+        if(p.classList.contains("pv"))
+        {
+            p.classList.remove("pv")
+            p.classList.add("ph")
+        }
+        else {
+            p.classList.remove("ph")
+            p.classList.add("pv")
+        }
+      alert(p.classList)
+    } 
+    </script>
+
+</body>
+</html>

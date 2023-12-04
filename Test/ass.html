@@ -1,0 +1,155 @@
+<!-- <!DOCTYPE html>
+<html>
+<body>
+    <style>
+       #myParagraph{
+          background-color:white;
+          text-align: center;
+          font-size: 55px;
+          margin-top: auto;
+        }
+    </style>
+    
+<p id="myParagraph">Ameer Restaurant.</p>
+<nav>
+  <ul class="Nav" class="nav justify-content-center flex-column">
+    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+    <li class="nav-item"><a href="about us.html" class="nav-link">About Us</a></li>
+    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+    <li class="nav-item"><a href="reservation.html" class="nav-link">reservation</a></li>
+  </ul>
+</nav> 
+<div class=" text-center text-light">
+  <h2 class="text-center text-light ">About Us</h2>
+  <p> Ameer Restaurant is the place to be if you're a food lover! Our chefs work their magic to create dishes that will make your taste buds dance with joy.</p>
+  <p>We take pride in using the freshest ingredients sourced from local farmers, ensuring that each dish is bursting with flavor and goodness.</p>
+  <p>At Ameer Restaurant, we believe in creating an inviting and cozy atmosphere where you can relax and enjoy your meal. Our friendly staff are dedicated to making your dining experience unforgettable.</p>
+  <p>Whether you're craving a juicy steak, a comforting bowl of pasta, or a flavorful vegetarian dish, our menu has something to satisfy every palate.</p>
+  <p>Come join us at Ameer Restaurant and embark on a culinary journey that will delight your senses. We can't wait to serve you!</p>
+</div>
+
+<button onclick="changeColor()">Change Color</button>
+
+<script>
+var isDefaultColor = true;
+
+function changeColor() {
+  var paragraph = document.getElementById("myParagraph");
+
+  if (isDefaultColor) {
+    paragraph.style.backgroundColor = "blue";
+    isDefaultColor = false;
+  } else {
+    paragraph.style.backgroundColor = "white";
+    isDefaultColor = true;
+  }
+}
+</script>
+
+<body>
+
+    <select id="myDropdown">
+      <option value="Amala">Amala </option>
+      <option value="Basmati rice">Basmati rice</option>
+      <option value="Fried rice">Fried rice</option>
+    </select>
+    
+    <button onclick="countItems()">Count Items</button>
+    
+    <script>
+    function countItems() {
+      var dropdown = document.getElementById("myDropdown");
+      var count = dropdown.length;
+      alert("The dropdown contains " + count + " items.");
+    }
+    </script>
+
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<body>
+  <div>
+    <form name="frm1">
+    <input name="fname" type="text" id="fn" placeholder="First name"  />
+    <input name="lname" type="text" id="ln" placeholder="Last name"  />
+    <input name="mname" type="text" id="mn" placeholder="Middle name"  />
+    <span id="nameAlert"></span>
+    <br>
+    male <input type="checkbox" value="1" name="sx" class="sxb" /> 
+    female <input type="checkbox" value="1" name="sx" class="sxb" />
+    <span id="genderAlert"></span>
+    <br>
+    <input type="button" onclick="frm_val()" value="Validate"/>
+  </form>
+  <form name="frm2">
+
+  </form>
+  <p id="box">Alert form</p>
+  </div>
+
+  <script>
+    
+    /*
+    
+    var pele = document.querySelector("#box")
+    var frms = document.forms
+    var s ="hello"
+    s+="world" //s = s + " world"
+    // hellowworld
+    //document.write(s)
+    var text = "Form length " + frms.length + "<br>" 
+    text += "first form name " + frms[0].name +"<br>"
+    text +="second form name "+ frms[1].name 
+    pele.innerHTML = text
+    */
+   
+    function frm_val() {
+      var f1 = document.forms['frm1']
+
+     // document.write(f1.length)
+      for(var i =0; i  < f1.length; i++)
+      {
+         var ele = f1.elements[i]
+         if(ele.type === "text")
+         {
+          if(ele.value === "" || ele.value.length < 3)
+          ele.style.color = "red"
+          else
+          ele.style.color = "black"
+         }
+      }
+  
+    }
+
+    function validatefrm() {
+      var txtf = document.querySelector("#fn");
+      var tv = txtf.value;
+      var nameAlert = document.getElementById("nameAlert")
+      if (tv === "" || tv.length < 3) {
+      
+      nameAlert.innerHTML = "Please enter your name";
+      nameAlert.style.color = "red";
+      txtf.style.color = "red";
+      } else {
+        txtf.style.color = "black"; // Remove the red color if the input is valid
+        nameAlert.style.display ="none"
+      }
+    
+      var chb = document.querySelectorAll(".sxb");
+      var genderAlert = document.getElementById("genderAlert");
+      if (!chb[0].checked && !chb[1].checked) {
+        genderAlert.innerHTML = "Please select a gender";
+        genderAlert.style.color = "red";
+      } else if (chb[0].checked && chb[1].checked) {
+        genderAlert.innerHTML = "Select a single gender";
+        genderAlert.style.color = "red";
+      } else {
+        genderAlert.innerHTML = "";
+      }
+    }
+  </script>
+</body>
+</html>

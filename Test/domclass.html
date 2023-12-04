@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Phone Number Validation</title>
+  <script>
+    function validatePhoneNumber(input) {
+      // Remove any whitespace from the input
+      console.log(input.length)
+      input = input.trim();
+       console.log(input.length)
+
+       var names = ["ade","shade","wale","brian"]
+      
+      names[3] = "Tunde"
+      names[4] = "Akin"
+  
+       var namelen = names.length
+       for(var j =0; j < namelen; j++)
+       {
+       
+        console.log(names[j])
+       }
+    }
+
+    // Example usage:
+
+    let phoneNumber = "1234567890               ";
+    validatePhoneNumber(phoneNumber)
+
+   function changeBG()
+   {
+    document.bgColor = "Gold"
+    var bg = document.getElementById("gb")
+    console.log(bg)
+    bg.textContent= "background changed"
+   }
+   
+   function changecolor()
+   {
+    document.bgColor = "Blue"
+    var Color = document.getElementById("color")
+    console.log(color)
+    color.textContent ="background changed again"
+   }
+
+   function domsElement() {
+   var homelink = document.getElementById("home")
+   console.log(homelink)
+  // console.log(homelink.getAttribute("textContent"))
+   }
+
+   function changeHome() {
+    var homelink = document.getElementById("home")
+    homelink.text = "Homepage"
+   }
+
+   
+   function changenavlink() {
+    var nav = document.getElementById("nav1")
+    nav.text = "Booking"
+   }
+
+   function changenavlink() {
+    var nav = document.getElementById("nav2")
+    nav.text = "Get in touch"
+   }
+   
+   function changemessage() {
+    var h1 = document.getElementById("body")
+    h1.text = "you are welcome"
+   }
+  </script>
+</head>
+<body>
+    <h1 id="message">Welcome</h1>
+  
+ <header>
+            <img src="images/my-logo-Transparent.png.png" alt="resturant logo"class="logo rounded"> 
+            <h1 class="ay text-danger fw-bold bg-light ">Ameer Restaurant</h1>  
+        </header>
+        <nav>
+            <ul class="nav justify-content-center">
+                <li class="nav-item"><a href="index.html" class="nav-link" id="home">Home</a></li>
+                <li class="nav-item dd">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Menu</a>
+                <ul class="dropdown-con">
+                    <li class="dropdown-item"> <a href="african.html" class="nav-link dp-link"> African Cuisine </a></li>
+                    <li class="dropdown-item"> <a href="chinese.html" class="nav-link dp-link"> Chinese Cuisine </a></li>
+                    <li class="dropdown-item"> <a href="eng.html" class="nav-link dp-link"> English Cuisine </a></li>
+                </ul>
+                </li>
+                <li class="nav-item"><a href="reservation.html" class="nav-link" id="nav1" >Reservations</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link" id="nav2" >Contact</a></li>
+                <li class="nav-item"><a href="about us.html" class="nav-link" id="nav3" >About Us</a></li>
+    
+            </ul>
+        </nav>
+   
+ <button id="gb" onclick="changeBG()">Change Background Color</button>
+ <button id="color" onclick="changecolor()">Change Background Color again</button>
+ <button onclick="changeHome()">Change Home Link</button>
+ <button onclick="changemessage()">Change message</button>
+ <button onclick="changenavlink()">Change nav-link></button>
+ <!-- old version for creating button -->
+ <input type='button' value="click me"/>
+    <script>
+        var homelink = document.getElementById("home")
+        console.log(homelink)
+        console.log(homelink.baseURI)
+       
+   function changemessage() {
+    // use for loop to do the change
+    var dplink = document.getElementsByClassName("dp-link")
+    var textList = ["Amala", "Basmati rice","Jollof rice"]
+// 0
+   for(var i=0; i<dplink.length; i++ )
+   {
+   // console.log(dplink.length)
+      dplink[i].textContent = textList[i]
+   }
+   // dplink[0].text = "Amala"
+    //dplink[1].text ="Basmati rice"
+    //dplink[2].text ="Fried rice"
+    //console.log("Classes length",dplink.length)
+   // dplink.text= "African food"
+   }
+  // function changenavlink()
+   {
+  //  var navlink = document.getElementsByClassName("nav-link")
+    //var textList = ["Booking", "Get in toch", "our story"]
+  //  for (var q=0; q<navlink.length; q++)
+   // navlink[q].textContent = textList[q]
+   }
+      
+
+
+       // console.log(homelink.getAttribute("textContent"))
+
+var numbers=[-5,-2,-6,0,-1]
+var largestNumbers = numbers[0]
+
+for (var i=1; i<numbers.lengthNumbers;i++){
+  if(numbers[i]>largestNumbers){
+    largestNumbers=numbers[i];
+  }
+}
+alert("The Largest Number is:"+largestNumbers);
+
+
+    </script>
+</body>
+</html>
